@@ -7,6 +7,14 @@ namespace AllowanceCalculation.DAL.Entities
 		private const string
 			ConnectionString = @"host=localhost;port=5432;database=AllowanceCalculation;username=postgres;password=1111";
 
+		public DbSet<Group> Groups { get; set; }
+
+		public DbSet<Subject> Subjects { get; set; }
+
+		public DbSet<Student> Students { get; set; }
+
+		public DbSet<StudentGrade> StudentGrades { get; set; }
+
 		public ApplicationContext()
 		{
 			Database.EnsureCreated();
@@ -16,13 +24,5 @@ namespace AllowanceCalculation.DAL.Entities
 		{
 			optionsBuilder.UseNpgsql(ConnectionString);
 		}
-
-		public DbSet<Group> Groups { get; set; }
-
-		public DbSet<Subject> Subjects { get; set; }
-
-		public DbSet<Student> Students { get; set; }
-
-		public DbSet<StudentGrade> StudentGrades { get; set;}
 	}
 }
