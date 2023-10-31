@@ -1,7 +1,6 @@
-﻿namespace AllowanceCalculation.DAL.Interfaces
+﻿namespace AllowanceCalculation.DAL.Interfaces;
+
+public interface IEntityWithId
 {
-    public interface IEntityWithId
-    {
-	    public int Id { get; set; }
-	}
+	int Id { get; set; }
 }

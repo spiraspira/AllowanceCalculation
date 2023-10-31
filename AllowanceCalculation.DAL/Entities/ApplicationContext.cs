@@ -1,28 +1,25 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿namespace AllowanceCalculation.DAL.Entities;
 
-namespace AllowanceCalculation.DAL.Entities
+public class ApplicationContext : DbContext
 {
-	public class ApplicationContext : DbContext
+	private const string
+		ConnectionString = "host=localhost;port=5432;database=AllowanceCalculation;username=postgres;password=1111";
+
+	public DbSet<Group> Groups { get; set; }
+
+	public DbSet<Subject> Subjects { get; set; }
+
+	public DbSet<Student> Students { get; set; }
+
+	public DbSet<StudentGrade> StudentGrades { get; set; }
+
+	public ApplicationContext()
 	{
-		private const string
-			ConnectionString = @"host=localhost;port=5432;database=AllowanceCalculation;username=postgres;password=1111";
+		Database.EnsureCreated();
+	}
 
-		public DbSet<Group> Groups { get; set; }
-
-		public DbSet<Subject> Subjects { get; set; }
-
-		public DbSet<Student> Students { get; set; }
-
-		public DbSet<StudentGrade> StudentGrades { get; set; }
-
-		public ApplicationContext()
-		{
-			Database.EnsureCreated();
-		}
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseNpgsql(ConnectionString);
-		}
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	{
+		optionsBuilder.UseNpgsql(ConnectionString);
 	}
 }
