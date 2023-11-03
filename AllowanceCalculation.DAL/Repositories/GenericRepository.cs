@@ -1,12 +1,12 @@
 ﻿namespace AllowanceCalculation.DAL.Repositories;
 
-public class CommonRepository<TEntity> : IRepository<TEntity> where TEntity : EntityWithId
+public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : EntityWithId
 {
 	protected ApplicationContext Context { get; }
 
 	protected DbSet<TEntity> Set { get; }
 
-	public CommonRepository(ApplicationContext dbContext)
+	public GenericRepository(ApplicationContext dbContext)
 	{
 		Context = dbContext;
 
