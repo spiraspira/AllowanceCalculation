@@ -2,9 +2,6 @@
 
 public class ApplicationContext : DbContext
 {
-	private const string
-		ConnectionString = "host=localhost; port=5432; database=AllowanceCalculation; username=postgres; password=1111";
-
 	public DbSet<Group>? Groups { get; set; }
 
 	public DbSet<GroupSubject> GroupSubjects { get; set; }
@@ -15,16 +12,9 @@ public class ApplicationContext : DbContext
 
 	public DbSet<StudentGrade>? StudentGrades { get; set; }
 
-	public ApplicationContext()
+	public ApplicationContext(DbContextOptions<ApplicationContext> o) : base(o)
 	{
-		Database.EnsureDeleted();
 
-		Database.EnsureCreated();
-	}
-
-	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-	{
-		optionsBuilder.UseNpgsql(ConnectionString);
 	}
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
