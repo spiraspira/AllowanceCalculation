@@ -14,7 +14,7 @@ public class ApplicationContext : DbContext
 
 	public ApplicationContext(DbContextOptions<ApplicationContext> o) : base(o)
 	{
-
+		Database.EnsureCreated();
 	}
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
