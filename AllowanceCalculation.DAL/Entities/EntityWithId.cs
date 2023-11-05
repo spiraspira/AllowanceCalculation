@@ -1,9 +1,6 @@
-﻿using AllowanceCalculation.DAL.Interfaces;
+﻿namespace AllowanceCalculation.DAL.Entities;
 
-namespace AllowanceCalculation.DAL.Entities
+public class EntityWithId : IEntityWithId
 {
-	public class EntityWithId : IEntityWithId
-	{
-		public int Id { get; set; }
-	}
+	public int Id { get; set; }
 }
