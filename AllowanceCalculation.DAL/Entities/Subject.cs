@@ -6,7 +6,7 @@ public class Subject : EntityWithId
 
 	public bool? IsPassFailEvaluated { get; set; }
 
-	public List<GroupSubject> GroupSubjects { get; set; } = new List<GroupSubject>();
+	public List<GroupSubject> GroupSubjects { get; set; } = new();
 
-	public List<StudentGrade> StudentGrades { get; set; } = new List<StudentGrade>();
+	public List<StudentGrade> StudentGrades { get; set; } = new();
 }
