@@ -35,12 +35,14 @@ foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(student))
 
 //var newStudent = new StudentModel() { Name = "Тестич Т.Т." , GroupId = 1};
 
-await repo.Delete(9);
+//await repo.Delete(9); //works
 
 //await repo.Create(newStudent); // works
 
 var students = repo.GetAll().Result; // works
 
+student.Name = "Заборонок Ж.Ж.";
 
+await repo.Update(student);
 
 Console.WriteLine();
