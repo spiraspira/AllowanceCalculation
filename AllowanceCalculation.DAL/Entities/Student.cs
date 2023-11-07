@@ -12,5 +12,5 @@ public class Student : EntityWithId
 
 	public Group? Group { get; set; }
 
-	public List<StudentGrade> StudentGrades { get; set; } = new List<StudentGrade>();
+	public List<StudentGrade> StudentGrades { get; set; } = new();
 }

@@ -10,6 +10,7 @@ public class StudentGradeRepository : GenericRepository<StudentGrade>
 	public override async Task<StudentGrade?> Get(int id)
 	{
 		return await Set
+			.AsNoTracking()
 			.Include(s => s.Subject)
 			.Include(s => s.Student)
 			.FirstOrDefaultAsync(g => g.Id == id);
@@ -18,6 +19,7 @@ public class StudentGradeRepository : GenericRepository<StudentGrade>
 	public override async Task<IEnumerable<StudentGrade>> GetAll()
 	{
 		return await Set
+			.AsNoTracking()
 			.Include(s => s.Subject)
 			.Include(s => s.Student)
 			.ToListAsync();

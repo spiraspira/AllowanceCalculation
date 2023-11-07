@@ -2,9 +2,9 @@
 
 public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : EntityWithId
 {
-	protected ApplicationContext Context { get; }
+	protected readonly ApplicationContext Context;
 
-	protected DbSet<TEntity> Set { get; }
+	protected readonly DbSet<TEntity> Set;
 
 	public GenericRepository(ApplicationContext dbContext)
 	{
@@ -12,14 +12,15 @@ public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : E
 
 		Set = Context.Set<TEntity>();
 	}
+
 	public virtual async Task<IEnumerable<TEntity>> GetAll()
 	{
-		return await Set.ToListAsync();
+		return await Set.AsNoTracking().ToListAsync();
 	}
 
 	public virtual async Task<TEntity?> Get(int id)
 	{
-		return await Set.FirstAsync(a => a.Id == id);
+		return await Set.AsNoTracking().FirstAsync(a => a.Id == id);
 	}
 
 	public async Task<TEntity> Create(TEntity item)

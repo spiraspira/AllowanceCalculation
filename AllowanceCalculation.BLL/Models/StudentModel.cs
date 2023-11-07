@@ -14,5 +14,5 @@ public class StudentModel
 
 	public GroupModel? Group { get; set; }
 
-	public List<StudentGradeModel> StudentGrades { get; set; } = new List<StudentGradeModel>();
+	public List<StudentGradeModel> StudentGrades { get; set; } = new();
 }
