@@ -1,28 +1,23 @@
 ﻿namespace AllowanceCalculation.BLL.Services;
 
-public class AllowanceCalculationService : IAllowanceCalculationService
+public class AllowanceCalculationService : CommonService<StudentModel, Student>, IAllowanceCalculationService
 {
-	readonly ICommonService<StudentModel> _studentRepo;
-
-	readonly int?[] _excellentGrades = { 9, 10 };
+	private readonly int?[] _excellentGrades = { 9, 10 };
 
 	private const double
 		ExcellenceIncrease = 1.25,
 		SocialWorkActiveIncrease = 1.5,
 		GradePointAverageRequired = 5.0;
 
-	public AllowanceCalculationService(ICommonService<StudentModel> studentRepo)
+	public AllowanceCalculationService(IRepository<Student> repository, IMapper mapper) : base(repository, mapper)
 	{
-		_studentRepo = studentRepo;
+
 	}
 
 	public double GetAllowance(int id, double allowanceBase)
 	{
 		var
-			student = GetStudent(id);
-
-		var
-			grades = student.GetGrades();
+			student = Get(id).Result;
 
 		bool
 			isSocialWorkActive = student.IsSocialWorkActive ?? false,
@@ -46,10 +41,5 @@ public class AllowanceCalculationService : IAllowanceCalculationService
 		}
 
 		return allowanceBase;
-	}
-
-	private StudentModel GetStudent(int id)
-	{
-		return _studentRepo.Get(id).Result;
 	}
 }
