@@ -29,7 +29,11 @@ var
 	caltulationService =
 		(IAllowanceCalculationService)serviceProvider.GetRequiredService(typeof(IAllowanceCalculationService));
 
-//var student = repo.Get(1).Result; // works
+var student = repo.Get(1).Result; // works
+
+student.Name = "Заборонок Ж.Ж.";
+
+await repo.Update(student);
 
 //foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(student))
 //{
@@ -45,10 +49,6 @@ var
 //await repo.Create(newStudent); // works
 
 var students = repo.GetAll().Result; // works
-
-//student.Name = "Заборонок Ж.Ж.";
-
-//await repo.Update(student);
 
 Console.WriteLine($"" +
                   $"{"Name",20}|" +
