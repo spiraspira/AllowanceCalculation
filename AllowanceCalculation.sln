@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllowanceCalculation.DAL", "AllowanceCalculation.DAL\AllowanceCalculation.DAL.csproj", "{5C138EE4-053E-4D12-9F4F-2A95159D1EA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBTest", "DBTest\DBTest.csproj", "{E661C53D-9C7E-4730-AE70-C76EC916875D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "DBTest\Sandbox.csproj", "{E661C53D-9C7E-4730-AE70-C76EC916875D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllowanceCalculation.BLL", "AllowanceCalculation.BLL\AllowanceCalculation.BLL.csproj", "{4DF58D02-A923-4BDC-ABA9-B8F88A55A246}"
 EndProject

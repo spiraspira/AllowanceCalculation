@@ -1,5 +1,4 @@
-﻿using AllowanceCalculation.BLL.Interfaces;
-using AllowanceCalculation.DAL.Interfaces;
+﻿using AllowanceCalculation.DAL.Interfaces;
 
 namespace AllowanceCalculation.BLL.Services;
 
