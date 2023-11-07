@@ -6,7 +6,7 @@ public class GroupModel
 
 	public string? Name { get; set; }
 
-	public List<StudentModel> Students { get; set; } = new List<StudentModel>();
+	public List<StudentModel> Students { get; set; } = new();
 
-	public List<GroupSubjectModel> GroupSubjects { get; set; } = new List<GroupSubjectModel>();
+	public List<GroupSubjectModel> GroupSubjects { get; set; } = new();
 }
