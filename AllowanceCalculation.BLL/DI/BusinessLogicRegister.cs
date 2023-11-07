@@ -4,6 +4,8 @@ public static class BusinessLogicRegister
 {
 	public static void AddBusinessLogic(this IServiceCollection services, IConfiguration config)
 	{
+		services.AddAutoMapper(typeof(MappingProfile).Assembly, typeof(MappingProfile).Assembly);
+
 		services.AddScoped<ICommonService<GroupModel>, CommonService<GroupModel, Group>>();
 
 		services.AddScoped<ICommonService<GroupSubjectModel>, CommonService<GroupSubjectModel, GroupSubject>>();

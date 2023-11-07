@@ -17,7 +17,7 @@ IConfiguration configuration = new ConfigurationBuilder()
 
 var services = new ServiceCollection();
 
-services.AddAutoMapper(typeof(MappingProfile).Assembly, typeof(MappingProfile).Assembly);
+
 
 services.AddBusinessLogic(configuration);
 
