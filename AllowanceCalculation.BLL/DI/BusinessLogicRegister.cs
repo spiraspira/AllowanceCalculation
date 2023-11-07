@@ -24,6 +24,10 @@ public static class BusinessLogicRegister
 			typeof(ICommonService<SubjectModel>),
 			typeof(CommonService<SubjectModel, Subject>));
 
+		services.AddScoped(
+			typeof(IAllowanceCalculationService),
+			typeof(AllowanceCalculationService));
+
 		services.AddDataAccess(config);
 	}
 }
