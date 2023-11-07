@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-
-namespace AllowanceCalculation.DAL.DI;
+﻿namespace AllowanceCalculation.DAL.DI;
 
 public static class DataAccessRegister
 {

@@ -1,4 +1,5 @@
-﻿using AllowanceCalculation.BLL.DI;
+﻿using System.ComponentModel;
+using AllowanceCalculation.BLL.DI;
 using AllowanceCalculation.BLL.Interfaces;
 using AllowanceCalculation.BLL.Mapper;
 using AllowanceCalculation.BLL.Models;
@@ -29,18 +30,18 @@ var
 	caltulationService =
 		(IAllowanceCalculationService)serviceProvider.GetRequiredService(typeof(IAllowanceCalculationService));
 
-var student = repo.Get(1).Result; // works
+//var student = repo.Get(1).Result; // works
 
-student.Name = "Заборонок Ж.Ж.";
+//student.Name = "Заборонок Ж.Ж.";
 
-await repo.Update(student);
+//await repo.Update(student);
 
-//foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(student))
-//{
-//	string name = descriptor.Name;
-//	object? value = descriptor.GetValue(student);
-//	Console.WriteLine("{0}={1}", name, value);
-//}
+// foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(student))
+// {
+// 	string name = descriptor.Name;
+// 	object? value = descriptor.GetValue(student);
+// 	Console.WriteLine("{0}={1}", name, value);
+// }
 
 //var newStudent = new StudentModel() { Name = "Тестич Т.Т." , GroupId = 1};
 
