@@ -6,15 +6,15 @@ public static class BusinessLogicRegister
 	{
 		services.AddAutoMapper(typeof(MappingProfile).Assembly, typeof(MappingProfile).Assembly);
 
-		services.AddScoped<ICommonService<GroupModel>, CommonService<GroupModel, Group>>();
+		services.AddScoped<IGenericService<GroupModel>, GenericService<GroupModel, Group>>();
 
-		services.AddScoped<ICommonService<GroupSubjectModel>, CommonService<GroupSubjectModel, GroupSubject>>();
+		services.AddScoped<IGenericService<GroupSubjectModel>, GenericService<GroupSubjectModel, GroupSubject>>();
 
-		services.AddScoped<ICommonService<StudentModel>, CommonService<StudentModel, Student>>();
+		services.AddScoped<IGenericService<StudentModel>, GenericService<StudentModel, Student>>();
 
-		services.AddScoped<ICommonService<StudentGradeModel>, CommonService<StudentGradeModel, StudentGrade>>();
+		services.AddScoped<IGenericService<StudentGradeModel>, GenericService<StudentGradeModel, StudentGrade>>();
 
-		services.AddScoped<ICommonService<SubjectModel>, CommonService<SubjectModel, Subject>>();
+		services.AddScoped<IGenericService<SubjectModel>, GenericService<SubjectModel, Subject>>();
 
 		services.AddScoped<IAllowanceCalculationService, AllowanceCalculationService>();
 

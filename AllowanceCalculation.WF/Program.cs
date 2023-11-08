@@ -1,3 +1,5 @@
+using AllowanceCalculation.WF.Forms;
+
 namespace AllowanceCalculation.WF;
 
 internal static class Program
@@ -21,7 +23,7 @@ internal static class Program
 
 		AddServiceProvider(out ServiceProvider, _services);
 
-		Application.Run(new Form1());
+		Application.Run(new AuthorizationForm());
 	}
 
 	private static void AddConfiguration(out IConfiguration configuration, string configurationFilePath)

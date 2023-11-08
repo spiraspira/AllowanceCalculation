@@ -1,6 +1,6 @@
 ﻿namespace AllowanceCalculation.BLL.Services;
 
-public class AllowanceCalculationService : CommonService<StudentModel, Student>, IAllowanceCalculationService
+public class AllowanceCalculationService : GenericService<StudentModel, Student>, IAllowanceCalculationService
 {
 	private readonly int?[] _excellentGrades = { 9, 10 };
 
