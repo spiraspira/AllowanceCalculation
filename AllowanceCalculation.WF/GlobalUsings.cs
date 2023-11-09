@@ -1,5 +1,12 @@
+global using System;
+global using System.Collections.Generic;
+global using System.ComponentModel;
+global using System.Linq;
+global using AllowanceCalculation.WF.Extensions;
+global using System.Threading.Tasks;
 global using AllowanceCalculation.BLL.DI;
-global using AllowanceCalculation.BLL.Mapper;
-global using AllowanceCalculation.WF.Interfaces;
+global using AllowanceCalculation.BLL.Interfaces;
+global using AllowanceCalculation.BLL.Models;
+global using AllowanceCalculation.WF.Forms;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;

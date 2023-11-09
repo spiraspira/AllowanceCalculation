@@ -1,5 +1,3 @@
-using AllowanceCalculation.WF.Forms;
-
 namespace AllowanceCalculation.WF;
 
 internal static class Program
@@ -8,7 +6,7 @@ internal static class Program
 
 	private static IServiceCollection? _services;
 
-	public static IServiceProvider? ServiceProvider;
+	private static IServiceProvider? _serviceProvider;
 
 	private const string ConfigurationFilePath = "appsettings.json";
 
@@ -17,31 +15,33 @@ internal static class Program
 	{
 		ApplicationConfiguration.Initialize();
 
-		AddConfiguration(out _configuration, ConfigurationFilePath);
+		_configuration = GetConfiguration(ConfigurationFilePath);
 
-		AddServices(out _services, _configuration);
+		_services = GetServices(_configuration);
 
-		AddServiceProvider(out ServiceProvider, _services);
+		_serviceProvider = GetServiceProvider(_services);
 
-		Application.Run(new AuthorizationForm());
+		Application.Run(new AuthorizationForm(_serviceProvider, _configuration));
 	}
 
-	private static void AddConfiguration(out IConfiguration configuration, string configurationFilePath)
+	private static IConfiguration GetConfiguration(string configurationFilePath)
 	{
-		configuration = new ConfigurationBuilder()
+		return new ConfigurationBuilder()
 			.AddJsonFile(configurationFilePath, optional: true, reloadOnChange: true)
 			.Build();
 	}
 
-	private static void AddServices(out IServiceCollection services, IConfiguration configuration)
+	private static IServiceCollection GetServices(IConfiguration configuration)
 	{
-		services = new ServiceCollection();
+		var services = new ServiceCollection();
 
 		services.AddBusinessLogic(configuration);
+
+		return services;
 	}
 
-	private static void AddServiceProvider(out IServiceProvider serviceProvider, IServiceCollection services)
+	private static IServiceProvider GetServiceProvider(IServiceCollection services)
 	{
-		serviceProvider = services.BuildServiceProvider();
+		return services.BuildServiceProvider();
 	}
 }
