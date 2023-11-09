@@ -4,6 +4,8 @@ public static class FormExtension
 {
 	public static void SpawnForm(this Form form, Form childForm)
 	{
+		childForm.SetDefaultSettings();
+
 		childForm.Owner = form;
 
 		childForm.FormClosing += ChildFormClosing!;
@@ -11,6 +13,21 @@ public static class FormExtension
 		childForm.Show();
 
 		form.Hide();
+	}
+
+	public static void SetDefaultSettings(this Form form)
+	{
+		form.MaximizeBox = false;
+
+		form.MinimizeBox = false;
+
+		form.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+		form.StartPosition = FormStartPosition.CenterScreen;
+
+		form.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+		form.BackColor = Color.AntiqueWhite;
 	}
 
 	private static void ChildFormClosing(object sender, CancelEventArgs e)

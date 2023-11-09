@@ -20,20 +20,12 @@ public partial class AuthorizationForm : Form
 
 		_adminPassword = configuration.GetValue<string>("AdminPassword");
 
-		//Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-	}
-
-	public async Task<IEnumerable<T>> GetTableAsync<T>(IServiceProvider serviceProvider)
-	{
-		var groupRepository = (IGenericService<GroupModel>)serviceProvider
-			.GetRequiredService(typeof(IGenericService<GroupModel>));
-
-		return (IEnumerable<T>)await groupRepository.GetAll();
+		this.SetDefaultSettings();
 	}
 
 	private async void AuthorizationForm_Load(object sender, EventArgs e)
 	{
-		_groups = (List<GroupModel>?)await GetTableAsync<GroupModel>(_serviceProvider);
+		_groups = (List<GroupModel>?)await _serviceProvider.GetTableAsync<GroupModel>();
 
 		comboBox_UserGroup.Populate(_groups, nameof(GroupModel.Name), nameof(GroupModel.Id));
 
@@ -51,7 +43,7 @@ public partial class AuthorizationForm : Form
 
 	private void button_UserLogin_Click(object sender, EventArgs e)
 	{
-		UserForm userForm = new UserForm(_serviceProvider, comboBox_UserName.SelectedValue as int?);
+		UserForm userForm = new UserForm(_serviceProvider, _configuration, comboBox_UserName.SelectedValue as int?);
 
 		this.SpawnForm(userForm);
 	}
