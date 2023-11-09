@@ -5,7 +5,7 @@
 		/// <summary>
 		///  Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary>
 		///  Clean up any resources being used.
@@ -36,6 +36,9 @@
 			label_UserName = new Label();
 			label_AdminPassword = new Label();
 			maskedTextBox_AdminPassword = new MaskedTextBox();
+			pictureBox1 = new PictureBox();
+			label_AllowanceCalculation = new Label();
+			((ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// button_AdminLogin
@@ -112,11 +115,32 @@
 			maskedTextBox_AdminPassword.Size = new Size(225, 27);
 			maskedTextBox_AdminPassword.TabIndex = 8;
 			// 
+			// pictureBox1
+			// 
+			pictureBox1.Image = Resources.Resources.authorizationFormPicture;
+			pictureBox1.Location = new Point(12, 12);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(340, 125);
+			pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+			pictureBox1.TabIndex = 9;
+			pictureBox1.TabStop = false;
+			// 
+			// label_AllowanceCalculation
+			// 
+			label_AllowanceCalculation.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+			label_AllowanceCalculation.Location = new Point(358, 12);
+			label_AllowanceCalculation.Name = "label_AllowanceCalculation";
+			label_AllowanceCalculation.Size = new Size(218, 134);
+			label_AllowanceCalculation.TabIndex = 10;
+			label_AllowanceCalculation.Text = "Программа расчета стипендии";
+			// 
 			// AuthorizationForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(582, 253);
+			Controls.Add(label_AllowanceCalculation);
+			Controls.Add(pictureBox1);
 			Controls.Add(maskedTextBox_AdminPassword);
 			Controls.Add(label_AdminPassword);
 			Controls.Add(label_UserName);
@@ -132,6 +156,7 @@
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Авторизация";
 			Load += AuthorizationForm_Load;
+			((ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -145,5 +170,7 @@
 		private Label label_UserName;
 		private Label label_AdminPassword;
 		private MaskedTextBox maskedTextBox_AdminPassword;
+		private PictureBox pictureBox1;
+		private Label label_AllowanceCalculation;
 	}
 }
