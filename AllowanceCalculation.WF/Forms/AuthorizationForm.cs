@@ -23,7 +23,7 @@ public partial class AuthorizationForm : Form
 		this.SetDefaultSettings();
 	}
 
-	private async void AuthorizationForm_Load(object sender, EventArgs e)
+	public async void AuthorizationForm_Load(object sender, EventArgs e)
 	{
 		_groups = (List<GroupModel>?)await _serviceProvider.GetTableAsync<GroupModel>();
 

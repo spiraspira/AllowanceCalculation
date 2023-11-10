@@ -2,7 +2,7 @@
 
 public static class FormExtension
 {
-	public static void SpawnForm(this Form form, Form childForm)
+	public static void SpawnForm(this Form form, Form childForm, bool showDialog = false)
 	{
 		childForm.SetDefaultSettings();
 
@@ -10,9 +10,16 @@ public static class FormExtension
 
 		childForm.FormClosing += ChildFormClosing!;
 
-		childForm.Show();
+		if (showDialog)
+		{
+			childForm.ShowDialog();
+		}
+		else
+		{
+			childForm.Show();
 
-		form.Hide();
+			form.Hide();
+		}
 	}
 
 	public static void SetDefaultSettings(this Form form)
