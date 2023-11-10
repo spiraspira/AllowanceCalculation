@@ -87,7 +87,7 @@ public partial class CreateUpdateStudentForm : Form
 			}
 		}
 
-		((StudentsForm)Owner).RefreshDataAndListBox();
+		((AdminForm)Owner).RefreshDataAndListBox();
 
 		Close();
 	}

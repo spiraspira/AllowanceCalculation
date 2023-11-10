@@ -28,85 +28,136 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			button_Students = new Button();
-			button2 = new Button();
-			button3 = new Button();
-			button4 = new Button();
+			listBox_Students = new ListBox();
+			button_Add = new Button();
+			button_Update = new Button();
+			button_Delete = new Button();
+			button_Sort = new Button();
+			button_Reset = new Button();
+			comboBox_Groups = new ComboBox();
+			button_StudentGrades = new Button();
+			button_AddGroup = new Button();
 			SuspendLayout();
 			// 
-			// button_Students
+			// listBox_Students
 			// 
-			button_Students.Cursor = Cursors.Hand;
-			button_Students.FlatStyle = FlatStyle.Flat;
-			button_Students.Image = Resources.Resources.studentIcon;
-			button_Students.Location = new Point(12, 12);
-			button_Students.Name = "button_Students";
-			button_Students.Size = new Size(125, 125);
-			button_Students.TabIndex = 0;
-			button_Students.Text = "Студенты";
-			button_Students.TextAlign = ContentAlignment.BottomCenter;
-			button_Students.UseVisualStyleBackColor = true;
-			button_Students.Click += button_Students_Click;
+			listBox_Students.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			listBox_Students.FormattingEnabled = true;
+			listBox_Students.ItemHeight = 18;
+			listBox_Students.Location = new Point(12, 12);
+			listBox_Students.Name = "listBox_Students";
+			listBox_Students.Size = new Size(611, 418);
+			listBox_Students.TabIndex = 0;
 			// 
-			// button2
+			// button_Add
 			// 
-			button2.Cursor = Cursors.Hand;
-			button2.FlatStyle = FlatStyle.Flat;
-			button2.Image = Resources.Resources.groupIcon;
-			button2.Location = new Point(143, 12);
-			button2.Name = "button2";
-			button2.Size = new Size(125, 125);
-			button2.TabIndex = 1;
-			button2.Text = "button2";
-			button2.TextAlign = ContentAlignment.BottomCenter;
-			button2.UseVisualStyleBackColor = true;
+			button_Add.Location = new Point(629, 12);
+			button_Add.Name = "button_Add";
+			button_Add.Size = new Size(165, 29);
+			button_Add.TabIndex = 1;
+			button_Add.Text = "Добавить";
+			button_Add.UseVisualStyleBackColor = true;
+			button_Add.Click += button_Add_Click;
 			// 
-			// button3
+			// button_Update
 			// 
-			button3.Cursor = Cursors.Hand;
-			button3.FlatStyle = FlatStyle.Flat;
-			button3.Image = Resources.Resources.subjectIcon;
-			button3.Location = new Point(12, 143);
-			button3.Name = "button3";
-			button3.Size = new Size(125, 125);
-			button3.TabIndex = 2;
-			button3.Text = "button3";
-			button3.TextAlign = ContentAlignment.BottomCenter;
-			button3.UseVisualStyleBackColor = true;
+			button_Update.Location = new Point(629, 47);
+			button_Update.Name = "button_Update";
+			button_Update.Size = new Size(165, 29);
+			button_Update.TabIndex = 2;
+			button_Update.Text = "Изменить";
+			button_Update.UseVisualStyleBackColor = true;
+			button_Update.Click += button_Update_Click;
 			// 
-			// button4
+			// button_Delete
 			// 
-			button4.Cursor = Cursors.Hand;
-			button4.FlatStyle = FlatStyle.Flat;
-			button4.Image = Resources.Resources.studentIcon;
-			button4.Location = new Point(143, 143);
-			button4.Name = "button4";
-			button4.Size = new Size(125, 125);
-			button4.TabIndex = 3;
-			button4.Text = "button4";
-			button4.TextAlign = ContentAlignment.BottomCenter;
-			button4.UseVisualStyleBackColor = true;
+			button_Delete.Location = new Point(629, 82);
+			button_Delete.Name = "button_Delete";
+			button_Delete.Size = new Size(165, 29);
+			button_Delete.TabIndex = 3;
+			button_Delete.Text = "Удалить";
+			button_Delete.UseVisualStyleBackColor = true;
+			button_Delete.Click += button_Delete_Click;
+			// 
+			// button_Sort
+			// 
+			button_Sort.Location = new Point(629, 366);
+			button_Sort.Name = "button_Sort";
+			button_Sort.Size = new Size(165, 29);
+			button_Sort.TabIndex = 4;
+			button_Sort.Text = "Сортировка";
+			button_Sort.UseVisualStyleBackColor = true;
+			button_Sort.Click += button_Sort_Click;
+			// 
+			// button_Reset
+			// 
+			button_Reset.Location = new Point(629, 401);
+			button_Reset.Name = "button_Reset";
+			button_Reset.Size = new Size(165, 29);
+			button_Reset.TabIndex = 5;
+			button_Reset.Text = "Сброс";
+			button_Reset.UseVisualStyleBackColor = true;
+			button_Reset.Click += button_Reset_Click;
+			// 
+			// comboBox_Groups
+			// 
+			comboBox_Groups.DropDownStyle = ComboBoxStyle.DropDownList;
+			comboBox_Groups.FormattingEnabled = true;
+			comboBox_Groups.Location = new Point(629, 332);
+			comboBox_Groups.Name = "comboBox_Groups";
+			comboBox_Groups.Size = new Size(165, 28);
+			comboBox_Groups.TabIndex = 6;
+			// 
+			// button_StudentGrades
+			// 
+			button_StudentGrades.Location = new Point(629, 117);
+			button_StudentGrades.Name = "button_StudentGrades";
+			button_StudentGrades.Size = new Size(165, 29);
+			button_StudentGrades.TabIndex = 7;
+			button_StudentGrades.Text = "Изменить оценки";
+			button_StudentGrades.UseVisualStyleBackColor = true;
+			button_StudentGrades.Click += button_StudentGrades_Click;
+			// 
+			// button_AddGroup
+			// 
+			button_AddGroup.Location = new Point(629, 261);
+			button_AddGroup.Name = "button_AddGroup";
+			button_AddGroup.Size = new Size(165, 29);
+			button_AddGroup.TabIndex = 8;
+			button_AddGroup.Text = "Добавить группу";
+			button_AddGroup.UseVisualStyleBackColor = true;
 			// 
 			// AdminForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(284, 285);
-			Controls.Add(button4);
-			Controls.Add(button3);
-			Controls.Add(button2);
-			Controls.Add(button_Students);
+			ClientSize = new Size(806, 450);
+			Controls.Add(button_AddGroup);
+			Controls.Add(button_StudentGrades);
+			Controls.Add(comboBox_Groups);
+			Controls.Add(button_Reset);
+			Controls.Add(button_Sort);
+			Controls.Add(button_Delete);
+			Controls.Add(button_Update);
+			Controls.Add(button_Add);
+			Controls.Add(listBox_Students);
 			Name = "AdminForm";
 			Text = "Панель администратора";
-			FormClosing += AdminForm_FormClosing;
+			FormClosing += StudentsForm_FormClosing;
+			Load += StudentsForm_Load;
 			ResumeLayout(false);
 		}
 
 		#endregion
 
-		private Button button_Students;
-		private Button button2;
-		private Button button3;
-		private Button button4;
+		private ListBox listBox_Students;
+		private Button button_Add;
+		private Button button_Update;
+		private Button button_Delete;
+		private Button button_Sort;
+		private Button button_Reset;
+		private ComboBox comboBox_Groups;
+		private Button button_StudentGrades;
+		private Button button_AddGroup;
 	}
 }
