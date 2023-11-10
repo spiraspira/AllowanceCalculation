@@ -123,4 +123,11 @@ public partial class AdminForm : Form
 	{
 		(Owner as AuthorizationForm).AuthorizationForm_Load(sender, e);
 	}
+
+	private void button_AddGroup_Click(object sender, EventArgs e)
+	{
+		GroupsForm groupsForm = new GroupsForm(_serviceProvider);
+
+		this.SpawnForm(groupsForm);
+	}
 }

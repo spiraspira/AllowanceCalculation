@@ -120,12 +120,13 @@
 			// 
 			// button_AddGroup
 			// 
-			button_AddGroup.Location = new Point(629, 261);
+			button_AddGroup.Location = new Point(629, 297);
 			button_AddGroup.Name = "button_AddGroup";
 			button_AddGroup.Size = new Size(165, 29);
 			button_AddGroup.TabIndex = 8;
-			button_AddGroup.Text = "Добавить группу";
+			button_AddGroup.Text = "Изменить группы";
 			button_AddGroup.UseVisualStyleBackColor = true;
+			button_AddGroup.Click += button_AddGroup_Click;
 			// 
 			// AdminForm
 			// 

@@ -29,6 +29,8 @@ public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : E
 
 		await Context.SaveChangesAsync();
 
+		Context.Entry(item).State = EntityState.Detached;
+
 		return item;
 	}
 
