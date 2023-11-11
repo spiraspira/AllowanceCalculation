@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllowanceCalculation.DAL", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllowanceCalculation.BLL", "AllowanceCalculation.BLL\AllowanceCalculation.BLL.csproj", "{4DF58D02-A923-4BDC-ABA9-B8F88A55A246}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{D3971755-24EE-45F7-9584-AD8B47FCBD99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllowanceCalculation.WF", "AllowanceCalculation.WF\AllowanceCalculation.WF.csproj", "{8E74B2B0-365C-492D-9641-BDADA1140893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllowanceCalculation.WF", "AllowanceCalculation.WF\AllowanceCalculation.WF.csproj", "{8E74B2B0-365C-492D-9641-BDADA1140893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{4DF58D02-A923-4BDC-ABA9-B8F88A55A246}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF58D02-A923-4BDC-ABA9-B8F88A55A246}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF58D02-A923-4BDC-ABA9-B8F88A55A246}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3971755-24EE-45F7-9584-AD8B47FCBD99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3971755-24EE-45F7-9584-AD8B47FCBD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3971755-24EE-45F7-9584-AD8B47FCBD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3971755-24EE-45F7-9584-AD8B47FCBD99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E74B2B0-365C-492D-9641-BDADA1140893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E74B2B0-365C-492D-9641-BDADA1140893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E74B2B0-365C-492D-9641-BDADA1140893}.Release|Any CPU.ActiveCfg = Release|Any CPU
