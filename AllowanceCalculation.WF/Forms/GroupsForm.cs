@@ -83,4 +83,16 @@ public partial class GroupsForm : Form
 
 		LoadData();
 	}
+
+	private void button_Subjects_Click(object sender, EventArgs e)
+	{
+		if (listBox_Groups.SelectedIndex == -1)
+		{
+			return;
+		}
+
+		SubjectsForm subjectsForm = new SubjectsForm(_serviceProvider, (int)listBox_Groups.SelectedValue);
+
+		this.SpawnForm(subjectsForm);
+	}
 }

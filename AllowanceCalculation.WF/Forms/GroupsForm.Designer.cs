@@ -83,6 +83,7 @@
 			button_Subjects.TabIndex = 4;
 			button_Subjects.Text = "Предметы";
 			button_Subjects.UseVisualStyleBackColor = true;
+			button_Subjects.Click += button_Subjects_Click;
 			// 
 			// textBox_GroupName
 			// 

@@ -40,11 +40,11 @@ public partial class StudentGradesForm : Form
 		{
 			dataGridView_NumericGrades.Rows.Add();
 
-			dataGridView_NumericGrades.Rows[i].Cells[0].Value = gradesNumeric[0].Id;
+			dataGridView_NumericGrades.Rows[i].Cells[0].Value = gradesNumeric[i].Id;
 
-			dataGridView_NumericGrades.Rows[i].Cells[1].Value = gradesNumeric[0].Subject.Name;
+			dataGridView_NumericGrades.Rows[i].Cells[1].Value = gradesNumeric[i].Subject.Name;
 
-			dataGridView_NumericGrades.Rows[i].Cells[2].Value = gradesNumeric[0].Grade;
+			dataGridView_NumericGrades.Rows[i].Cells[2].Value = gradesNumeric[i].Grade;
 		}
 	}
 
