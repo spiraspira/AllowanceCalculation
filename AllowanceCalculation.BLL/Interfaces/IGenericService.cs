@@ -1,6 +1,6 @@
 ﻿namespace AllowanceCalculation.BLL.Interfaces;
 
-public interface ICommonService<TModel> where TModel : class
+public interface IGenericService<TModel> where TModel : class
 {
 	Task<TModel> Create(TModel model);
 

@@ -3,7 +3,7 @@ global using AutoMapper;
 global using AllowanceCalculation.BLL.Extensions;
 
 global using AllowanceCalculation.BLL.Interfaces;
-
+global using AllowanceCalculation.BLL.Mapper;
 global using AllowanceCalculation.BLL.Models;
 
 global using AllowanceCalculation.BLL.Services;
