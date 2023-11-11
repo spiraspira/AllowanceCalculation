@@ -54,7 +54,7 @@ public partial class AuthorizationForm : Form
 
 		if (password == _adminPassword)
 		{
-			AdminForm adminForm = new AdminForm(_serviceProvider);
+			AdminForm adminForm = new AdminForm(_serviceProvider, _configuration);
 
 			this.SpawnForm(adminForm);
 		}

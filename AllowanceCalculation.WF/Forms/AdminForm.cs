@@ -1,4 +1,7 @@
-﻿namespace AllowanceCalculation.WF.Forms;
+﻿using System.Configuration;
+using System.Linq.Expressions;
+
+namespace AllowanceCalculation.WF.Forms;
 
 public partial class AdminForm : Form
 {
@@ -8,16 +11,22 @@ public partial class AdminForm : Form
 
 	private readonly List<int> _listBoxStudentIds = new();
 
-	public AdminForm(IServiceProvider? serviceProvider)
+	private readonly IConfiguration? _configuration;
+
+	public AdminForm(IServiceProvider? serviceProvider, IConfiguration? configuration)
 	{
 		InitializeComponent();
 
 		_serviceProvider = serviceProvider;
+
+		_configuration = configuration;
 	}
 
 	private void StudentsForm_Load(object sender, EventArgs e)
 	{
 		RefreshDataAndListBox();
+
+		textBox_AllowanceBase.Text = _configuration.GetValue<string>("AllowanceBase");
 	}
 
 	public async void RefreshDataAndListBox()
@@ -129,5 +138,28 @@ public partial class AdminForm : Form
 		GroupsForm groupsForm = new GroupsForm(_serviceProvider);
 
 		this.SpawnForm(groupsForm);
+	}
+
+	private void button_AllowanceBase_Click(object sender, EventArgs e)
+	{
+		if (textBox_AllowanceBase.Text.Length == 0)
+		{
+			return;
+		}
+
+		double allowanceBase;
+
+		try
+		{
+			allowanceBase = double.Parse(textBox_AllowanceBase.Text.Replace('.', ','));
+		}
+		catch
+		{
+			return;
+		}
+
+		_configuration["AllowanceBase"] = allowanceBase.ToString();
+
+		MessageBox.Show("Сохранено");
 	}
 }

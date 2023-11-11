@@ -26,7 +26,7 @@ public partial class UserForm : Form
 
 		_configuration = configuration;
 
-		_allowanceBase = _configuration.GetValue<double>("AllowanceBase");
+		_allowanceBase = double.Parse(_configuration.GetValue<string>("AllowanceBase").Replace('.', ','));
 	}
 
 	private async void UserForm_Load(object sender, EventArgs e)

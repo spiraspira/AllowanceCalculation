@@ -37,6 +37,9 @@
 			comboBox_Groups = new ComboBox();
 			button_StudentGrades = new Button();
 			button_AddGroup = new Button();
+			label_AllowanceBase = new Label();
+			textBox_AllowanceBase = new TextBox();
+			button_AllowanceBase = new Button();
 			SuspendLayout();
 			// 
 			// listBox_Students
@@ -128,11 +131,40 @@
 			button_AddGroup.UseVisualStyleBackColor = true;
 			button_AddGroup.Click += button_AddGroup_Click;
 			// 
+			// label_AllowanceBase
+			// 
+			label_AllowanceBase.AutoSize = true;
+			label_AllowanceBase.Location = new Point(629, 172);
+			label_AllowanceBase.Name = "label_AllowanceBase";
+			label_AllowanceBase.Size = new Size(146, 20);
+			label_AllowanceBase.TabIndex = 9;
+			label_AllowanceBase.Text = "Базовая стипендия:";
+			// 
+			// textBox_AllowanceBase
+			// 
+			textBox_AllowanceBase.Location = new Point(629, 195);
+			textBox_AllowanceBase.Name = "textBox_AllowanceBase";
+			textBox_AllowanceBase.Size = new Size(146, 27);
+			textBox_AllowanceBase.TabIndex = 10;
+			// 
+			// button_AllowanceBase
+			// 
+			button_AllowanceBase.Location = new Point(629, 228);
+			button_AllowanceBase.Name = "button_AllowanceBase";
+			button_AllowanceBase.Size = new Size(146, 29);
+			button_AllowanceBase.TabIndex = 11;
+			button_AllowanceBase.Text = "Сохранить";
+			button_AllowanceBase.UseVisualStyleBackColor = true;
+			button_AllowanceBase.Click += button_AllowanceBase_Click;
+			// 
 			// AdminForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(806, 450);
+			Controls.Add(button_AllowanceBase);
+			Controls.Add(textBox_AllowanceBase);
+			Controls.Add(label_AllowanceBase);
 			Controls.Add(button_AddGroup);
 			Controls.Add(button_StudentGrades);
 			Controls.Add(comboBox_Groups);
@@ -147,6 +179,7 @@
 			FormClosing += StudentsForm_FormClosing;
 			Load += StudentsForm_Load;
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -160,5 +193,8 @@
 		private ComboBox comboBox_Groups;
 		private Button button_StudentGrades;
 		private Button button_AddGroup;
+		private Label label_AllowanceBase;
+		private TextBox textBox_AllowanceBase;
+		private Button button_AllowanceBase;
 	}
 }

@@ -11,3 +11,4 @@ global using AllowanceCalculation.BLL.Models;
 global using AllowanceCalculation.WF.Forms;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
+global using Newtonsoft.Json.Linq;
