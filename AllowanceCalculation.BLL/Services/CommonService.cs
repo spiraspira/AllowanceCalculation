@@ -1,6 +1,4 @@
-﻿using AllowanceCalculation.DAL.Interfaces;
-
-namespace AllowanceCalculation.BLL.Services;
+﻿namespace AllowanceCalculation.BLL.Services;
 
 public class CommonService<TModel, TEntity> : ICommonService<TModel>
 	where TEntity : EntityWithId
