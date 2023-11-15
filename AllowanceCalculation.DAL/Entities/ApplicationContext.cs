@@ -1,28 +1,32 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿namespace AllowanceCalculation.DAL.Entities;
 
-namespace AllowanceCalculation.DAL.Entities
+public class ApplicationContext : DbContext
 {
-	public class ApplicationContext : DbContext
+	public DbSet<Group>? Groups { get; set; }
+
+	public DbSet<GroupSubject> GroupSubjects { get; set; }
+
+	public DbSet<Subject>? Subjects { get; set; }
+
+	public DbSet<Student>? Students { get; set; }
+
+	public DbSet<StudentGrade>? StudentGrades { get; set; }
+
+	public ApplicationContext(DbContextOptions<ApplicationContext> o) : base(o)
 	{
-		private const string
-			ConnectionString = @"host=localhost;port=5432;database=AllowanceCalculation;username=postgres;password=1111";
+		Database.EnsureCreated();
+	}
 
-		public ApplicationContext()
-		{
-			Database.EnsureCreated();
-		}
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		modelBuilder.Entity<Group>(a => a.HasData(GroupInitial.Groups));
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseNpgsql(ConnectionString);
-		}
+		modelBuilder.Entity<GroupSubject>(a => a.HasData(GroupSubjectInitial.GroupSubjects));
 
-		public DbSet<Group> Groups { get; set; }
+		modelBuilder.Entity<Subject>(a => a.HasData(SubjectInitial.Subjects));
 
-		public DbSet<Subject> Subjects { get; set; }
+		modelBuilder.Entity<Student>(a => a.HasData(StudentInitial.Students));
 
-		public DbSet<Student> Students { get; set; }
-
-		public DbSet<StudentGrade> StudentGrades { get; set;}
+		modelBuilder.Entity<StudentGrade>(a => a.HasData(StudentGradesInitial.StudentGrades));
 	}
 }
