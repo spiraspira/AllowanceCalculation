@@ -4,15 +4,17 @@ public static class BusinessLogicRegister
 {
 	public static void AddBusinessLogic(this IServiceCollection services, IConfiguration config)
 	{
-		services.AddScoped<ICommonService<GroupModel>, CommonService<GroupModel, Group>>();
+		services.AddAutoMapper(typeof(MappingProfile).Assembly, typeof(MappingProfile).Assembly);
 
-		services.AddScoped<ICommonService<GroupSubjectModel>, CommonService<GroupSubjectModel, GroupSubject>>();
+		services.AddScoped<IGenericService<GroupModel>, GenericService<GroupModel, Group>>();
 
-		services.AddScoped<ICommonService<StudentModel>, CommonService<StudentModel, Student>>();
+		services.AddScoped<IGenericService<GroupSubjectModel>, GenericService<GroupSubjectModel, GroupSubject>>();
 
-		services.AddScoped<ICommonService<StudentGradeModel>, CommonService<StudentGradeModel, StudentGrade>>();
+		services.AddScoped<IGenericService<StudentModel>, GenericService<StudentModel, Student>>();
 
-		services.AddScoped<ICommonService<SubjectModel>, CommonService<SubjectModel, Subject>>();
+		services.AddScoped<IGenericService<StudentGradeModel>, GenericService<StudentGradeModel, StudentGrade>>();
+
+		services.AddScoped<IGenericService<SubjectModel>, GenericService<SubjectModel, Subject>>();
 
 		services.AddScoped<IAllowanceCalculationService, AllowanceCalculationService>();
 

@@ -2,5 +2,5 @@
 
 public interface IAllowanceCalculationService
 {
-	double GetAllowance(int id, double allowanceBase);
+	Task<double> GetAllowance(int id, double allowanceBase);
 }

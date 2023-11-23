@@ -1,6 +1,6 @@
 ﻿namespace AllowanceCalculation.BLL.Services;
 
-public class CommonService<TModel, TEntity> : ICommonService<TModel>
+public class GenericService<TModel, TEntity> : IGenericService<TModel>
 	where TEntity : EntityWithId
 	where TModel : class
 {
@@ -8,7 +8,7 @@ public class CommonService<TModel, TEntity> : ICommonService<TModel>
 
 	protected readonly IMapper _mapper;
 
-	public CommonService(IRepository<TEntity> repository, IMapper mapper)
+	public GenericService(IRepository<TEntity> repository, IMapper mapper)
 	{
 		_repository = repository;
 

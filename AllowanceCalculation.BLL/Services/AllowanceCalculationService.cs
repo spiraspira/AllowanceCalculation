@@ -1,6 +1,6 @@
 ﻿namespace AllowanceCalculation.BLL.Services;
 
-public class AllowanceCalculationService : CommonService<StudentModel, Student>, IAllowanceCalculationService
+public class AllowanceCalculationService : GenericService<StudentModel, Student>, IAllowanceCalculationService
 {
 	private readonly int?[] _excellentGrades = { 9, 10 };
 
@@ -14,10 +14,10 @@ public class AllowanceCalculationService : CommonService<StudentModel, Student>,
 
 	}
 
-	public double GetAllowance(int id, double allowanceBase)
+	public async Task<double> GetAllowance(int id, double allowanceBase)
 	{
 		var
-			student = Get(id).Result;
+			student = await Get(id);
 
 		bool
 			isSocialWorkActive = student.IsSocialWorkActive ?? false,

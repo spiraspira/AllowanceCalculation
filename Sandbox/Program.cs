@@ -17,14 +17,14 @@ IConfiguration configuration = new ConfigurationBuilder()
 
 var services = new ServiceCollection();
 
-services.AddAutoMapper(typeof(MappingProfile).Assembly, typeof(MappingProfile).Assembly);
+
 
 services.AddBusinessLogic(configuration);
 
 var serviceProvider = services.BuildServiceProvider();
 
 var
-	repo = (ICommonService<StudentModel>)serviceProvider.GetRequiredService(typeof(ICommonService<StudentModel>));
+	repo = (IGenericService<StudentModel>)serviceProvider.GetRequiredService(typeof(IGenericService<StudentModel>));
 
 var
 	caltulationService =
