@@ -4,7 +4,7 @@ public class ApplicationContext : DbContext
 {
 	public DbSet<Group>? Groups { get; set; }
 
-	public DbSet<GroupSubject> GroupSubjects { get; set; }
+	public DbSet<GroupSubject>? GroupSubjects { get; set; }
 
 	public DbSet<Subject>? Subjects { get; set; }
 

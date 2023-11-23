@@ -1,5 +1,6 @@
-global using AllowanceCalculation.BLL.Extensions;
 global using AutoMapper;
+
+global using AllowanceCalculation.BLL.Extensions;
 
 global using AllowanceCalculation.BLL.Interfaces;
 

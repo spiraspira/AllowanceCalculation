@@ -8,7 +8,7 @@ public class SubjectModel
 
 	public bool? IsPassFailEvaluated { get; set; }
 
-	public List<GroupSubjectModel> GroupSubjects { get; set; } = new List<GroupSubjectModel>();
+	public List<GroupSubjectModel> GroupSubjects { get; set; } = new();
 
-	public List<StudentGradeModel> StudentGrades { get; set; } = new List<StudentGradeModel>();
+	public List<StudentGradeModel> StudentGrades { get; set; } = new();
 }

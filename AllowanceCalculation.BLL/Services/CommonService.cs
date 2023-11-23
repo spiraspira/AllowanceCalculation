@@ -4,9 +4,9 @@ public class CommonService<TModel, TEntity> : ICommonService<TModel>
 	where TEntity : EntityWithId
 	where TModel : class
 {
-	private readonly IRepository<TEntity> _repository;
+	protected readonly IRepository<TEntity> _repository;
 
-	private readonly IMapper _mapper;
+	protected readonly IMapper _mapper;
 
 	public CommonService(IRepository<TEntity> repository, IMapper mapper)
 	{

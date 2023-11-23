@@ -10,6 +10,7 @@ public class GroupSubjectRepository : GenericRepository<GroupSubject>
 	public override async Task<GroupSubject?> Get(int id)
 	{
 		return await Set
+			.AsNoTracking()
 			.Include(g => g.Group)
 			.Include(g => g.Subject)
 			.FirstOrDefaultAsync(g => g.Id == id);
@@ -18,6 +19,7 @@ public class GroupSubjectRepository : GenericRepository<GroupSubject>
 	public override async Task<IEnumerable<GroupSubject>> GetAll()
 	{
 		return await Set
+			.AsNoTracking()
 			.Include(g => g.Group)
 			.Include(g => g.Subject)
 			.ToListAsync();
